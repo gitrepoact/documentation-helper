@@ -18,7 +18,7 @@ IndexName = os.getenv("INDEX_NAME")
 
 def run_llm(query: str):
 
-    embeddings = OpenAIEmbeddings(model="text-embeddings-3-small")
+    embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
     docsearch = PineconeVectorStore(index_name=IndexName, embedding=embeddings)
 
     chat = ChatOpenAI(temperature=0, verbose=True)

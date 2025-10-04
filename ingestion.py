@@ -30,10 +30,10 @@ os.environ["REQUESTS_CA_BUNDLE"] = certifi.where()
 embeddings = OpenAIEmbeddings(
         model="text-embedding-3-small", show_progress_bar=False, chunk_size=50, retry_min_seconds=10
     )
-vectorstore = Chroma(persist_directory="chroma_db", embedding_function=embeddings)
-#vectorstore = PineconeVectorStore(
-#    index_name="langchain-docs-2025", embedding=embeddings
-#)
+#vectorstore = Chroma(persist_directory="chroma_db", embedding_function=embeddings)
+vectorstore = PineconeVectorStore(
+    index_name="langchain-docs-2025", embedding=embeddings
+)
 #vectorstore = Pinecone.from_existing_index(index_name="langchain-docs-2025", embedding=embeddings)
 
 tavily_extract = TavilyExtract()

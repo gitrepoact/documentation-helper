@@ -11,7 +11,8 @@ embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
 
 
 def ingest_docs():
-    loader = ReadTheDocsLoader("langchain-docs/langchain.readthedocs.io/en/v0.1")
+    #download the below data using following comment wget -r -A.html -P langchain-docs/ https://api.python.langchain.com/en/v0.1/langchain_api_reference.html
+    loader = ReadTheDocsLoader("langchain-docs/api.python.langchain.com/en/v0.1")
 
     raw_documents = loader.load()
     print(f"loaded {len(raw_documents)} documents")

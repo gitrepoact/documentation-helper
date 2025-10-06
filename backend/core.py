@@ -33,4 +33,9 @@ def run_llm(query: str, chat_history: List[Dict[str, Any]] = []):
     )
 
     result = qa.invoke(input={"input": query, "chat_history": chat_history})
-    return result
+    new_result = {
+        "query": result["input"],
+        "result": result["answer"],
+        "source_documents": result["context"],
+    }
+    return new_result
